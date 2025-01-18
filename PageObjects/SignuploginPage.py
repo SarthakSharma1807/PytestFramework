@@ -8,6 +8,7 @@ class Signuploginpage:
     signup_button = (By.XPATH,"//button[@data-qa='signup-button']")
 
     enter_acct_info_text = (By.XPATH, "//h2[@class='title text-center']/b[text()='Enter Account Information']")
+    acct_info_title_checkbox = (By.XPATH, "//input[@id='id_gender1']")
     acct_info_name = (By.XPATH, "//input[@data-qa='name']")
     acct_info_email = (By.XPATH, "//input[@data-qa='email']")
     acct_info_pwd = (By.XPATH, "//input[@data-qa='password']")
@@ -34,6 +35,9 @@ class Signuploginpage:
 
     def __init__(self, driver):
         self.driver = driver
+
+    def acctinfotitlecheckbox(self):
+        return self.driver.find_element(*Signuploginpage.acct_info_title_checkbox)
 
     def signupname(self):
         return self.driver.find_element(*Signuploginpage.signup_name)
@@ -108,4 +112,11 @@ class Signuploginpage:
     def acctcreatebtn(self):
         return self.driver.find_element(*Signuploginpage.acct_create_btn)
 
+    def acctcreatedtext(self):
+        return self.driver.find_element(*Signuploginpage.acct_created_text)
 
+    def continuebtn(self):
+        return self.driver.find_element(*Signuploginpage.continue_btn)
+
+    def acctdeletedtext(self):
+        return self.driver.find_element(*Signuploginpage.acct_deleted_text)
