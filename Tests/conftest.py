@@ -26,7 +26,8 @@ def setup(request):
     yield
     driver.close()
 
-@pytest.mark.hookwrapper
+#@pytest.mark.hookwrapper -- this is being depricated
+@pytest.hookimpl(hookwrapper=True)
 def pytest_runtest_makereport(item):
     """
         Extends the PyTest Plugin to take and embed screenshot in html report, whenever test fails.

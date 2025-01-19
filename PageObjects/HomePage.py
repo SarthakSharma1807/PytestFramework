@@ -5,8 +5,9 @@ class Homepage:
 
     signup_login_button = (By.XPATH, "//i[@class='fa fa-lock']")
     logged_in_user = (By.XPATH, "//li/a/b")
-    delete_account = (By.LINK_TEXT," Delete Account")
+    delete_account = (By.XPATH, "//i[@class='fa fa-trash-o']")
     home_page_logo = (By.XPATH,"//div[@class='logo pull-left']")
+
 
     def __init__(self, driver):
         self.driver = driver

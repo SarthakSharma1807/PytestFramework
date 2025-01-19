@@ -22,12 +22,12 @@ class Signuploginpage:
     address_info_company = (By.XPATH,"//input[@data-qa='company']")
     address_address1 = (By.XPATH,"//input[@data-qa='address']")
     address_address2 = (By.XPATH, "//input[@data-qa='address2']")
-    address_country = (By.XPATH, "//input[@data-qa='country']")
+    address_country = (By.XPATH, "//select[@data-qa='country']")
     address_state = (By.XPATH, "//input[@data-qa='state']")
     address_city = (By.XPATH, "//input[@data-qa='city']")
     address_zipcode = (By.XPATH, "//input[@data-qa='zipcode']")
     address_mobile = (By.XPATH, "//input[@data-qa='mobile_number']")
-    acct_create_btn = (By.XPATH, "//input[@data-qa='create_account']")
+    acct_create_btn = (By.XPATH, "//button[@data-qa='create-account']")
 
     acct_created_text = (By.XPATH, "//h2[@data-qa='account-created']")
     continue_btn = (By.LINK_TEXT, "Continue")
@@ -106,7 +106,7 @@ class Signuploginpage:
     def addresszipcode(self):
         return self.driver.find_element(*Signuploginpage.address_zipcode)
 
-    def address_mobile(self):
+    def addressmobile(self):
         return self.driver.find_element(*Signuploginpage.address_mobile)
 
     def acctcreatebtn(self):
