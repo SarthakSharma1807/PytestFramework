@@ -33,6 +33,12 @@ class Signuploginpage:
     continue_btn = (By.LINK_TEXT, "Continue")
     acct_deleted_text = (By.XPATH, "//h2[@data-qa='account-deleted']")
 
+    login_email = (By.XPATH, "//input[@data-qa='login-email']")
+    login_password = (By.XPATH, "//input[@data-qa='login-password']")
+    login_btn = (By.XPATH, "//button[@data-qa='login-button']")
+
+
+
     def __init__(self, driver):
         self.driver = driver
 
@@ -120,3 +126,14 @@ class Signuploginpage:
 
     def acctdeletedtext(self):
         return self.driver.find_element(*Signuploginpage.acct_deleted_text)
+
+    def loginemail(self):
+        return self.driver.find_element(*Signuploginpage.login_email)
+
+    def loginpwd(self):
+        return self.driver.find_element(*Signuploginpage.login_password)
+
+    def loginbtn(self):
+        return self.driver.find_element(*Signuploginpage.login_btn)
+
+

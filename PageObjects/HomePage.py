@@ -7,6 +7,7 @@ class Homepage:
     logged_in_user = (By.XPATH, "//li/a/b")
     delete_account = (By.XPATH, "//i[@class='fa fa-trash-o']")
     home_page_logo = (By.XPATH,"//div[@class='logo pull-left']")
+    account_logout = ((By.XPATH, "//i[@class='fa fa-lock']"))
 
 
     def __init__(self, driver):
@@ -23,3 +24,6 @@ class Homepage:
 
     def verifyhomepagelogo(self):
         return self.driver.find_element(*Homepage.home_page_logo)
+
+    def acctlogout(self):
+        return self.driver.find_element(*Homepage.account_logout)

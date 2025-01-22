@@ -3,7 +3,7 @@ import pytest
 from PageObjects.HomePage import Homepage
 from PageObjects.SignuploginPage import Signuploginpage
 from Utils.Base import Base
-from TestData.Registerusertestdata import RegisterUserTestData
+from TestData.Testdatadriver import TestDataDriver
 
 
 class Test_registeruser(Base):
@@ -56,7 +56,7 @@ class Test_registeruser(Base):
         self.verifypresenceoflocator(signuploginpage.acct_deleted_text)
         signuploginpage.continuebtn().click()
 
-    @pytest.fixture(params=RegisterUserTestData.getTestData("test_registeruser"))
+    @pytest.fixture(params=TestDataDriver.getTestData("test_registeruser"))
     def getData(self, request):
         return request.param
 

@@ -2,7 +2,7 @@ import openpyxl
 import os
 
 
-class RegisterUserTestData:
+class TestDataDriver:
 
     @staticmethod
     def getTestData(test_case_name):
