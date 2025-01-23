@@ -6,6 +6,7 @@ class Signuploginpage:
     signup_name = (By.XPATH, "//input[@type = 'text']")
     signup_email = (By.XPATH,"//input[@data-qa = 'signup-email']")
     signup_button = (By.XPATH,"//button[@data-qa='signup-button']")
+    sign_email_already_exist = (By.XPATH, "//p[text()='Email Address already exist!']")
 
     enter_acct_info_text = (By.XPATH, "//h2[@class='title text-center']/b[text()='Enter Account Information']")
     acct_info_title_checkbox = (By.XPATH, "//input[@id='id_gender1']")
@@ -36,6 +37,8 @@ class Signuploginpage:
     login_email = (By.XPATH, "//input[@data-qa='login-email']")
     login_password = (By.XPATH, "//input[@data-qa='login-password']")
     login_btn = (By.XPATH, "//button[@data-qa='login-button']")
+    login_error = (By.XPATH, "//p[@style='color: red;']")
+
 
 
 
@@ -135,5 +138,11 @@ class Signuploginpage:
 
     def loginbtn(self):
         return self.driver.find_element(*Signuploginpage.login_btn)
+
+    def loginerror(self):
+        return self.driver.find_element(*Signuploginpage.login_error)
+
+    def signupemailalreadyexist(self):
+        return self.driver.find_element(*Signuploginpage.sign_email_already_exist)
 
 
